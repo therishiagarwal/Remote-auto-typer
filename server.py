@@ -69,23 +69,24 @@ def auto_type():
     try:
         text = request.form.get("text", "")
         if text:
-            # Add a 5-second delay
+            # Add a 5-second delay before typing starts
             time.sleep(5)
-            # Split the text into lines and type each line
+            # Split the text into lines for proper handling
             lines = text.split("\n")
             for line in lines:
-                parts = line.split("\t")  # Handle tabs
+                parts = line.split("\t")  # Handle tabs if present
                 for i, part in enumerate(parts):
-                    pyperclip.copy(part)
-                    pyautogui.hotkey('ctrl', 'v')  # Paste part
+                    # Type each part character by character
+                    pyautogui.typewrite(part, interval=0.01)  # Simulate typing (adjust speed with interval)
                     if i < len(parts) - 1:
-                        pyautogui.press('tab')  # Press Tab for tabs
-                pyautogui.press('enter')  # Move to the next line
+                        pyautogui.press('tab')  # Simulate Tab key for tabs
+                pyautogui.press('enter')  # Press Enter to start a new line
             return "Text successfully typed on your laptop!", 200
         return "No text provided!", 400
     except Exception as e:
         print(f"Error occurred: {e}")
         return f"Error: {e}", 500
+
 
 def run_server():
     """Run the Flask server."""
