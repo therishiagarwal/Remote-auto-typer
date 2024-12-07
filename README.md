@@ -1,7 +1,5 @@
 # Remote-auto-typer
 
-# Remote Auto Typer
-
 A Python Flask application that automates typing on a local machine using a web-based interface. It allows users to input text remotely and simulates typing it line by line, handling tabs and line breaks.
 
 ## Features
