@@ -49,6 +49,3 @@ A Python Flask application that automates typing on a local machine using a web-
 
 ## Contributions
 Pull requests are welcome! For major changes, open an issue first to discuss what you would like to change.
-
-<!-- ## License
-This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details. -->
